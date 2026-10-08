@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+         .form-container {
+            width: 500px;
+            margin: 40px auto;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-row > label,
+        .form-row > span {
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .form-row input[type="text"],
+        .form-row input[type="password"],
+        .form-row select {
+            width: 180px;
+        }
+
+        .options {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .buttons {
+            margin-left: 160px;
+            margin-top: 10px;
+        }
+
+        #messages {
+            margin-top: 20px;
+            margin-left: 0;
+        }
+
+        #messages p {
+            margin: 8px 0;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+<form id="regForm">
+
+    <div class="form-row">
+        <label id="usernameLabel" for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </div>
+
+    <div class="form-row">
+        <label id="emailLabel" for="email">Email:</label>
+        <input type="text" id="email" name="email">
+    </div>
+
+    <div class="form-row">
+        <label id="phoneLabel" for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+    </div>
+
+    <div class="form-row">
+        <label id="passwordLabel" for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    </div>
+
+    <div class="form-row">
+        <label id="confirmPasswordLabel" for="confirm_password">
+            Confirm Password:
+        </label>
+        <input type="password" id="confirm_password" name="confirm_password">
+    </div>
+
+    <div class="form-row">
+        <span id="genderLabel">Gender:</span>
+
+        <div class="options">
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label id="ageLabel" for="age">Age Group:</label>
+
+        <select id="age" name="age">
+            <option value=""></option>
+            <option value="under21">&lt; 21 years old</option>
+            <option value="21-25">21 - 25 years old</option>
+            <option value="26-35">26 - 35 years old</option>
+            <option value="36-50">36 - 50 years old</option>
+            <option value="50">50 years old</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <span>Music Genre:</span>
+
+        <div class="options">
+            <input type="checkbox" id="pop" name="music" value="pop">
+            <label for="pop">Pop</label>
+
+            <input type="checkbox" id="hiphop" name="music" value="hiphop">
+            <label for="hiphop">Hip-hop</label>
+
+            <input type="checkbox" id="jazz" name="music" value="jazz">
+            <label for="jazz">Jazz</label>
+
+            <input type="checkbox" id="rock" name="music" value="rock">
+            <label for="rock">Rock</label>
+
+            <input type="checkbox" id="classical" name="music" value="classical">
+            <label for="classical">Classical</label>
+
+            <input type="checkbox" id="country" name="music" value="country">
+            <label for="country">Country</label>
+        </div>
+    </div>
+
+    <div class="buttons">
+<input type="button" id="submitBtn" value="Submit" onclick="validateForm()">        
+<input type="reset" value="Clear" onclick="clearErrors()">
+    </div>
+
+</form>
+
+<div id="messages"></div>
+
+<script src="validation.js" defer></script>
+
+</body>
+</html>
